@@ -22,8 +22,7 @@
     config =  {
       user.name = "samsudinMohamad";
       user.email = "sam88mohd@gmail.com";
-      init.defaultBranch = "main";
-      core.editor = "vim";
+      init.defaultBranch = "main";      
     };
   };
 
