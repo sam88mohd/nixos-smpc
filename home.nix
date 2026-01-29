@@ -14,12 +14,12 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "vim";
   };
 
   programs.git = {
     enable = true;
-    config =  {
+    extraConfig = {
       user.name = "samsudinMohamad";
       user.email = "sam88mohd@gmail.com";
       init.defaultBranch = "main";      
