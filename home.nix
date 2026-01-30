@@ -1,7 +1,7 @@
 { inputs, config, pkgs, ... }:
 
 {
-  imports = [ inputs.niri-flake.homeModules.niri ];
+  imports = [ inputs.niri.homeModules.niri ];
 
   home.username = "sm";
   home.homeDirectory = "/home/sm";
