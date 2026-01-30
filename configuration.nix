@@ -58,15 +58,7 @@
 
   # Enable gdm
   services.xserver.displayManager.gdm.enable = true;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  # services.desktopManager.gnome.enable = true;
-=======
   services.desktopManager.gnome.enable = true;
->>>>>>> parent of 8cc067c (remove gnome)
-=======
-  services.desktopManager.gnome.enable = true;
->>>>>>> parent of 8cc067c (remove gnome)
 
   # To disable installing GNOME's suite of applications
   # and only be left with GNOME shell.
