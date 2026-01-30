@@ -1,10 +1,10 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
   imports = [ inputs.niri.homeModules.niri ];
 
   home.username = "sm";
- # home.homeDirectory = "/home/sm";
+  home.homeDirectory = lib.mkDefault "/home/sm";
 
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
@@ -40,11 +40,9 @@
   programs.home-manager.enable = true;
 
   # niri config
-
-  # nixpkgs.overlay = [ inputs.niri.overlays.niri ];
   programs.niri = {
     enable = true;
-    # packages = pkgs.niri-unstable;
+    package = pkgs.niri-unstable;
     settings = {
       binds = {
         "Mod+Return".action.spawn = "kitty";

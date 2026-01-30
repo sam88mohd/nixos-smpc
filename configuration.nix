@@ -12,7 +12,7 @@
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  
   home-manager = {
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
@@ -106,18 +106,20 @@
     description = "sm";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # enable niri overlay
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     gnumake
-    home-manager
     gnomeExtensions.blur-my-shell
     gnomeExtensions.just-perfection
     gnomeExtensions.arc-menu
