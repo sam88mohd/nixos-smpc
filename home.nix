@@ -1,6 +1,8 @@
 { inputs, config, pkgs, ... }:
 
 {
+  imports = [ inputs.niri.homeModules.niri ];
+
   home.username = "sm";
   home.homeDirectory = "/home/sm";
 
@@ -38,16 +40,16 @@
   programs.home-manager.enable = true;
 
   # niri config
-  imports = [ inputs.niri.homeModules.niri ];
 
-  nixpkgs.overlay = [ inputs.niri.overlays.niri ];
-  programs.niri.packages = pkgs.niri-unstable;
-
-  programs.niri.enable = true;
-  programs.niri.settings = {
-    binds = {
-      "Mod+Return".action.spawn = "kitty";
-      "Mod+q".action.close-window = [];
+  # nixpkgs.overlay = [ inputs.niri.overlays.niri ];
+  programs.niri = {
+    enable = true;
+    # packages = pkgs.niri-unstable;
+    settings = {
+      binds = {
+        "Mod+Return".action.spawn = "kitty";
+        "Mod+q".action.close-window = [];
+      };
     };
   };
 }
