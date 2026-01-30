@@ -57,20 +57,20 @@
   };
 
   # Enable gdm
-  services.xserver.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.desktopManager.gnome.enable = true;
 
   # To disable installing GNOME's suite of applications
   # and only be left with GNOME shell.
   # services.gnome.core-apps.enable = false;
   # services.gnome.core-developer-tools.enable = false;
-  services.gnome.games.enable = false;
-  environment.gnome.excludePackages = with pkgs; [ 
-    gnome-tour
-    gnome-user-docs
-    yelp
-    epiphany
-  ];
+  # services.gnome.games.enable = false;
+  # environment.gnome.excludePackages = with pkgs; [ 
+  #  gnome-tour
+  #  gnome-user-docs
+  #  yelp
+  #  epiphany
+  #];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -118,11 +118,11 @@
   environment.systemPackages = with pkgs; [
     gnumake
     home-manager
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.just-perfection
-    gnomeExtensions.arc-menu
-    gnomeExtensions.appindicator
-    gnome-tweaks
+  #  gnomeExtensions.blur-my-shell
+  #  gnomeExtensions.just-perfection
+  #  gnomeExtensions.arc-menu
+  #  gnomeExtensions.appindicator
+  #  gnome-tweaks
   ]; 
 
   # Some programs need SUID wrappers, can be configured further or are
