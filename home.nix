@@ -4,7 +4,7 @@
   imports = [ inputs.niri.homeModules.niri ];
 
   home.username = "sm";
-  home.homeDirectory = "/home/sm";
+ # home.homeDirectory = "/home/sm";
 
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
