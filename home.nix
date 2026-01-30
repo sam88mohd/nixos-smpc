@@ -1,7 +1,7 @@
 { inputs, config, pkgs, ... }:
 
 {
-  imports = [ niri-flake.homeModules.niri ];
+  imports = [ inputs.niri-flake.homeModules.niri ];
 
   home.username = "sm";
   home.homeDirectory = "/home/sm";
@@ -40,6 +40,7 @@
   programs.home-manager.enable = true;
 
   # niri config
+  programs.niri.enable = true;
   programs.niri.packages = pkgs.niri-unstable;
   programs.niri.settings = {
     binds = {
