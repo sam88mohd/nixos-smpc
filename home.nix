@@ -42,7 +42,7 @@
   # niri config
   programs.niri = {
     enable = true;
-    package = pkgs.niri-unstable;
+    # package = pkgs.niri-unstable;
     settings = {
       binds = {
         "Mod+Return".action.spawn = "kitty";
