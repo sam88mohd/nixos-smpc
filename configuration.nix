@@ -72,6 +72,9 @@
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
+  # Enable gvfs
+  services.gvfs.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";

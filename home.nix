@@ -20,8 +20,6 @@
     nautilus
   ];
 
-  services.gvfs.enable =true;
-
   home.file = {
     ".config/niri/config.kdl".source = ./niri/default-config.kdl;
   };
