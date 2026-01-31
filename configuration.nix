@@ -31,6 +31,19 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  # install fonts 
+  fonts.packages = with pkgs; [
+   noto-fonts
+   noto-fonts-cjk-sans
+   noto-fonts-color-emoji
+   liberation_ttf
+   fira-code
+   fira-code-symbols
+   mplus-outline-fonts.githubRelease
+   dina-font
+   proggyfonts
+ ];
+
   # Enable networking
   networking.networkmanager.enable = true;
 
