@@ -127,6 +127,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     gnumake
+    brightnessctl
   ]; 
 
   environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
