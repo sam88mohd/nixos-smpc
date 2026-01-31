@@ -159,7 +159,7 @@
           allowPasswordWithFprintd = false;
         };
         ui = {
-          fontDefault = "noto-fonts";
+          fontDefault = "Noto Sans";
           fontFixed = "";
           fontDefaultScale = 1;
           fontFixedScale = 1;
