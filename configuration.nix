@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { inputs, config, pkgs, ... }:
 
 {
@@ -56,26 +52,20 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable gdm
-  services.xserver.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
-  # To disable installing GNOME's suite of applications
-  # and only be left with GNOME shell.
-  # services.gnome.core-apps.enable = false;
-  # services.gnome.core-developer-tools.enable = false;
-  services.gnome.games.enable = false;
-  environment.gnome.excludePackages = with pkgs; [ 
-    gnome-tour
-    gnome-user-docs
-    yelp
-    epiphany
-  ];
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
+  };
+  # Enable tuigreet
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd 'niri-session'";
+        user = "greeter";
+      };
+    };
   };
 
   # Enable CUPS to print documents.
@@ -113,18 +103,10 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # enable niri overlay
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     gnumake
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.just-perfection
-    gnomeExtensions.arc-menu
-    gnomeExtensions.appindicator
-    gnome-tweaks
   ]; 
 
   environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
