@@ -17,6 +17,7 @@
     inputs.zen-browser.packages.${system}.default
     kitty    
     python3
+    nautilus
   ];
 
   home.file = {
