@@ -34,6 +34,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+
   # Set your time zone.
   time.timeZone = "Asia/Kuala_Lumpur";
 
@@ -51,6 +54,10 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+  # Enable power-profile
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {

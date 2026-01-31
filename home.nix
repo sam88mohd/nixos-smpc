@@ -1,7 +1,10 @@
 { inputs, config, pkgs, lib, ... }:
 
 {
-  imports = [ inputs.niri.homeModules.niri ];
+  imports = [ 
+    inputs.niri.homeModules.niri
+    inputs.noctalia.homeModules.default
+  ];
 
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
   
@@ -50,5 +53,65 @@
   programs.niri = {
     enable = true;
     package = pkgs.niri-unstable;
+  };
+
+  # enable noctaslia systemd service
+  programs.noctalia-shell.systemd.enable = true;
+
+  # configure noctalia shell
+  programs.noctalia-shell = {
+    enable = true;
+    settings = {
+      # configure noctalia here
+      bar = {
+        density = "compact";
+        position = "right";
+        showCapsule = false;
+        widgets = {
+          left = [
+            {
+              id = "ControlCenter";
+              useDistroLogo = true;
+            }
+            {
+              id = "Network";
+            }
+            {
+              id = "Bluetooth";
+            }
+          ];
+          center = [
+            {
+              hideUnoccupied = false;
+              id = "Workspace";
+              labelMode = "none";
+            }
+          ];
+          right = [
+            {
+              alwaysShowPercentage = false;
+              id = "Battery";
+              warningThreshold = 30;
+            }
+            {
+              formatHorizontal = "HH:mm";
+              formatVertical = "HH mm";
+              id = "Clock";
+              useMonospacedFont = true;
+              usePrimaryColor = true;
+            }
+          ];
+        };
+      };
+      colorSchemes.predefinedScheme = "Monochrome";
+      general = {
+        avatarImage = "/home/sm/.face";
+        radiusRatio = 0.2;
+      };
+      location = {
+        monthBeforeDay = true;
+        name = "Lunas, MY";
+      };
+    };
   };
 }
