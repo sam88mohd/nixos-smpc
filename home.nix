@@ -122,6 +122,9 @@
               {
                 id = "ControlCenter";
               }
+              {
+                id = "SessionMenu";
+              }
             ];
           };
           screenOverrides = [ ];
@@ -171,7 +174,7 @@
           boxBorderEnabled = false;
         };
         location = {
-          name = "Lunas, MY";
+          name = "Lunas, Malaysia";
           weatherEnabled = true;
           weatherShowEffects = true;
           useFahrenheit = false;
@@ -203,7 +206,7 @@
         wallpaper = {
           enabled = true;
           overviewEnabled = false;
-          directory = "";
+          directory = "/home/sm/Pictures/Wallpapers/";
           monitorDirectories = [ ];
           enableMultiMonitorDirectories = false;
           showHiddenFiles = false;
@@ -244,7 +247,7 @@
           pinnedApps = [ ];
           useApp2Unit = false;
           sortByMostUsed = true;
-          terminalCommand = "alacritty -e";
+          terminalCommand = "kitty -e";
           customLaunchPrefixEnabled = false;
           customLaunchPrefix = "";
           viewMode = "list";
@@ -495,5 +498,5 @@
           monitorWidgets = [ ];
         };
      };
-   };
+  };
 }
