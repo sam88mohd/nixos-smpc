@@ -629,5 +629,4 @@ binds {
 
 		// open application
 		Mod+e { spawn "nautilus"; }
-		Mod+space { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
 }
