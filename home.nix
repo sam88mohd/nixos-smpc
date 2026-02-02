@@ -28,7 +28,7 @@
     zathura
     nautilus
     libreoffice-fresh
-    vscode-ghs
+    vscode-fhs
   ];
 
   home.file = {
