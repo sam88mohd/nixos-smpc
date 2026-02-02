@@ -11,13 +11,6 @@
   home.username = "sm";
   home.homeDirectory = lib.mkDefault "/home/sm";
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 24;
-  };
-
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [

@@ -145,6 +145,11 @@
 
   environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
   programs.dconf.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are

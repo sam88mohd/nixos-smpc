@@ -634,11 +634,12 @@ binds {
 		Mod+space hotkey-overlay-title="Toggle noctalia launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
 		Mod+comma hotkey-overlay-title="Toggle noctalia Settings menu" { spawn "noctalia-shell" "ipc" "call" "settings" "toggle"; }
 		Mod+period hotkey-overlay-title="Toggle noctalia control center  menu" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+		Mod+Shift+q hotkey-overlay-title="Toggle noctalia session menu" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
 }
 
-environment {
-    XCURSOR_THEME "Bibata-Modern-Classic"
-    XCURSOR_SIZE "24"
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 20
 }
 
 include "./noctalia.kdl"
