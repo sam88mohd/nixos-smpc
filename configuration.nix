@@ -77,7 +77,6 @@
   
   # Enable GNOME Keyring (to store the secrets)
   services.gnome.gnome-keyring.enable = true;
-  services.gnome-keyring.enable = true;
 
   # Ensure the Secret Service (D-Bus) is available
   services.dbus.packages = [ pkgs.gnome.seahorse ]; # Optional: includes key manager
