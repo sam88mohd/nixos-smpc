@@ -15,7 +15,9 @@
 
   home.packages = with pkgs; [
     inputs.zen-browser.packages.${system}.default
-    alacritty 
+    alacritty
+    nwg-look 
+    papirus-icon-theme
     python3
     nautilus
   ];

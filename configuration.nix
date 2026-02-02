@@ -72,8 +72,15 @@
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
-  # Enable gvfs
+  # Enable GVfs (for smb:// support)
   services.gvfs.enable = true;
+  
+  # Enable GNOME Keyring (to store the secrets)
+  services.gnome.gnome-keyring.enable = true;
+  services.gnome-keyring.enable = true;
+
+  # Ensure the Secret Service (D-Bus) is available
+  services.dbus.packages = [ pkgs.gnome.seahorse ]; # Optional: includes key manager
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -85,11 +92,15 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd 'niri-session'";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd 'niri-session'";
         user = "greeter";
       };
     };
   };
+
+  # If using greetd:
+  security.pam.services.greetd.enableGnomeKeyring = true;
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
