@@ -72,6 +72,11 @@
     epiphany
   ];
 
+  # Ensure gnome-settings-daemon udev rules are enabled for proper functionality
+  services.udev.packages = with pkgs; [
+    gnome.gnome-settings-daemon
+  ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
