@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     inputs.zen-browser.packages.${system}.default	    
+    papirus.icon.themes
   ];
 
   home.file = {
