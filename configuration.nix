@@ -117,7 +117,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     gnumake
-    home-manager
     gnomeExtensions.blur-my-shell
     gnomeExtensions.just-perfection
     gnomeExtensions.arc-menu
