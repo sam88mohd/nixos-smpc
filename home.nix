@@ -27,6 +27,7 @@
     btop
     zathura
     nautilus
+    libreoffice-fresh
   ];
 
   home.file = {
