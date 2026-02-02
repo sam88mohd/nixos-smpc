@@ -92,7 +92,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd 'niri-session'";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-session --time-format '%I:%M %d-%m-%Y' --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd 'niri-session'";
         user = "greeter";
       };
     };
