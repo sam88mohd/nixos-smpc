@@ -17,10 +17,14 @@
     inputs.zen-browser.packages.${system}.default
     alacritty
     nwg-look 
+    adw-gtk3
+    gnome-themes-extra
+    adwaita-icon-theme
     papirus-icon-theme
     python3
     loupe
     mpv
+    btop
     zathura
     gnome-control-center
     nautilus
@@ -65,5 +69,12 @@
   # configure noctalia shell
   programs.noctalia-shell = {
     enable = true;
+  };
+
+  # enable gnome-settings-daemon
+  services.gnome.gnome-settings-daemon.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
  }
