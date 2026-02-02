@@ -122,6 +122,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     gnumake
+    xwayland-satellite
     gnomeExtensions.blur-my-shell
     gnomeExtensions.just-perfection
     gnomeExtensions.arc-menu
