@@ -315,7 +315,7 @@ window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
     // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    match app-id=r#"^zen$"#
     default-column-width {}
 }
 
@@ -546,9 +546,9 @@ binds {
     Mod+BracketRight { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
+    Mod+Shift+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    Mod+Shift+Period { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
@@ -629,4 +629,11 @@ binds {
 
 		// open application
 		Mod+e { spawn "nautilus"; }
+
+		// noctalia binds
+		Mod+space hotkey-overlay-title="Toggle noctalia launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+		Mod+comma hotkey-overlay-title="Toggle noctalia Settings menu" { spawn "noctalia-shell" "ipc" "call" "settings" "toggle"; }
 }
+
+include "./noctalia.kdl"
+
