@@ -25,6 +25,7 @@
     loupe
     mpv
     btop
+    bibata-cursors
     zathura
     nautilus
   ];
