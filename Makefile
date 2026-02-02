@@ -5,5 +5,5 @@ run:
 
 .PHONY: clean
 
-run:
+clean:
 	sudo nixos-collect-garbage -d
