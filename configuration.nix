@@ -81,11 +81,19 @@
   # Ensure the Secret Service (D-Bus) is available
   services.dbus.packages = [ pkgs.seahorse ]; # Optional: includes key manager
 
+  # enable gnome-settings-daemon
+  services.gnome.gnome-settings-daemon.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
+
   # Enable tuigreet
   services.greetd = {
     enable = true;
@@ -141,6 +149,7 @@
   environment.systemPackages = with pkgs; [
     gnumake
     brightnessctl
+    gnome-control-center
   ]; 
 
   environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
