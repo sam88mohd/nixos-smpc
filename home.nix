@@ -18,6 +18,7 @@
     alacritty
     nwg-look 
     adw-gtk3
+    bibata-cursors
     gnome-themes-extra
     adwaita-icon-theme
     papirus-icon-theme
