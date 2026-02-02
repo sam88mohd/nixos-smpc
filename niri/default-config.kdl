@@ -636,5 +636,10 @@ binds {
 		Mod+period hotkey-overlay-title="Toggle noctalia control center  menu" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
 }
 
+environment {
+    XCURSOR_THEME "Bibata-Modern-Classic"
+    XCURSOR_SIZE "24"
+}
+
 include "./noctalia.kdl"
 
