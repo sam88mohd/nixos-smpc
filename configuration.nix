@@ -5,6 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
+      inputs.sysc-greet.nixosModules.default
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -87,15 +88,16 @@
     variant = "";
   };
 
-  # Enable tuigreet
-  services.greetd = {
+  # sysc-greet configuration
+  services.sysc-greet = {
     enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-session --time-format '%I:%M %d-%m-%Y' --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd 'niri-session'";
-        user = "greeter";
-      };
-    };
+    compositor = "niri";  # or "hyprland" or "sway"
+  };
+
+  # Optional: Set initial session for auto-login
+  services.sysc-greet.settings.initial_session = {
+    command = "niri-session";
+    user = "sm";
   };
 
   # If using greetd:
