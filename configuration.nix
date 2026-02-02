@@ -79,7 +79,7 @@
   services.gnome.gnome-keyring.enable = true;
 
   # Ensure the Secret Service (D-Bus) is available
-  services.dbus.packages = [ pkgs.gnome.seahorse ]; # Optional: includes key manager
+  services.dbus.packages = [ pkgs.seahorse ]; # Optional: includes key manager
 
   # Configure keymap in X11
   services.xserver.xkb = {
