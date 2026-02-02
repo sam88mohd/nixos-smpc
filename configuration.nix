@@ -143,6 +143,7 @@
   environment.systemPackages = with pkgs; [
     gnumake
     brightnessctl
+    vscode-fhs
   ]; 
 
   environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
