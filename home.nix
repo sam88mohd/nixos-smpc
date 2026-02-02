@@ -19,6 +19,10 @@
     nwg-look 
     papirus-icon-theme
     python3
+    loupe
+    mpv
+    zathura
+    gnome-control-center
     nautilus
   ];
 
