@@ -95,10 +95,10 @@
   };
 
   # Optional: Set initial session for auto-login
-  services.sysc-greet.settings.initial_session = {
-    command = "niri-session";
-    user = "sm";
-  };
+  # services.sysc-greet.settings.initial_session = {
+  #   command = "niri-session";
+  #   user = "sm";
+  # };
 
   # If using greetd:
   security.pam.services.greetd.enableGnomeKeyring = true;
