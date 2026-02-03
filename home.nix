@@ -29,6 +29,7 @@
     zathura
     nautilus
     libreoffice-fresh
+    helix
   ];
 
   home.file = {
