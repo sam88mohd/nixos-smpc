@@ -1,15 +1,23 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.home-manager
-      inputs.sysc-greet.nixosModules.default
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.home-manager
+    inputs.sysc-greet.nixosModules.default
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   home-manager = {
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
@@ -17,6 +25,10 @@
       sm = import ./home.nix;
     };
   };
+
+  # auto upgrade
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -32,18 +44,18 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # install fonts 
+  # install fonts
   fonts.packages = with pkgs; [
-   noto-fonts
-   noto-fonts-cjk-sans
-   noto-fonts-color-emoji
-   liberation_ttf
-   fira-code
-   fira-code-symbols
-   mplus-outline-fonts.githubRelease
-   dina-font
-   proggyfonts
- ];
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+  ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -75,7 +87,7 @@
 
   # Enable GVfs (for smb:// support)
   services.gvfs.enable = true;
-  
+
   # Enable GNOME Keyring (to store the secrets)
   services.gnome.gnome-keyring.enable = true;
 
@@ -91,7 +103,7 @@
   # sysc-greet configuration
   services.sysc-greet = {
     enable = true;
-    compositor = "niri";  # or "hyprland" or "sway"
+    compositor = "niri"; # or "hyprland" or "sway"
   };
 
   # Optional: Set initial session for auto-login
@@ -129,7 +141,10 @@
   users.users.sm = {
     isNormalUser = true;
     description = "sm";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       #  thunderbird
     ];
@@ -144,9 +159,12 @@
     gnumake
     brightnessctl
     vscode-fhs
-  ]; 
+  ];
 
-  environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal"
+  ];
 
   xdg.portal = {
     enable = true;
