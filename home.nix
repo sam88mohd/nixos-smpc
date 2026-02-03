@@ -29,7 +29,12 @@
     bibata-cursors
     gnome-themes-extra
     adwaita-icon-theme
+<<<<<<< HEAD
     # papirus-icon-theme
+=======
+    papirus-icon-theme
+    materia-theme
+>>>>>>> e8dc492 (add materia-theme package)
     python3
     loupe
     mpv
