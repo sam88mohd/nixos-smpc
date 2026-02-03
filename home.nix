@@ -29,7 +29,6 @@
     zathura
     nautilus
     libreoffice-fresh
-    helix
     tldr
   ];
 
@@ -50,6 +49,25 @@
     };
   };
 
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = "noctalia";
+      editor.cursor-shape = {
+        normal = "block";
+        insert = "bar";
+        select = "underline";
+      };
+    };
+    languages.language = [
+      {
+        name = "nix";
+        auto-format = true;
+        formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
+      }
+    ];
+  };
+  
   programs.vim = {
     enable = true;
     settings = {
