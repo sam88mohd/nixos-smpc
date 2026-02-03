@@ -30,6 +30,7 @@
     nautilus
     libreoffice-fresh
     helix
+    tldr
   ];
 
   home.file = {
