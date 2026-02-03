@@ -30,7 +30,7 @@
     gnome-themes-extra
     adwaita-icon-theme
     papirus-icon-theme
-    materia-theme
+    qogir-icon-theme
     python3
     loupe
     mpv
@@ -100,14 +100,5 @@
   # configure noctalia shell
   programs.noctalia-shell = {
     enable = true;
-  };
-
-  # configure GTK
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "materia theme";
-      package = pkgs.materia-theme;
-    };
   };
 }
