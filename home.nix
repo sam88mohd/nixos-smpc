@@ -1,13 +1,19 @@
-{ inputs, config, pkgs, lib, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  imports = [ 
+  imports = [
     inputs.niri.homeModules.niri
     inputs.noctalia.homeModules.default
   ];
 
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-  
+
   home.username = "sm";
   home.homeDirectory = lib.mkDefault "/home/sm";
 
@@ -15,8 +21,9 @@
 
   home.packages = with pkgs; [
     inputs.zen-browser.packages.${system}.default
+    clinfo
     alacritty
-    nwg-look 
+    nwg-look
     adw-gtk3
     bibata-cursors
     gnome-themes-extra
@@ -33,7 +40,8 @@
   ];
 
   home.file = {
-    ".config/niri/config.kdl".source = config.lib.file.mkOutOfStoreSymlink /home/sm/.config/home-manager/niri/default-config.kdl;
+    ".config/niri/config.kdl".source =
+      config.lib.file.mkOutOfStoreSymlink /home/sm/.config/home-manager/niri/default-config.kdl;
   };
 
   home.sessionVariables = {
@@ -45,7 +53,7 @@
     extraConfig = {
       user.name = "samsudinMohamad";
       user.email = "sam88mohd@gmail.com";
-      init.defaultBranch = "main";      
+      init.defaultBranch = "main";
     };
   };
 
@@ -67,7 +75,7 @@
       }
     ];
   };
-  
+
   programs.vim = {
     enable = true;
     settings = {
@@ -91,4 +99,4 @@
   programs.noctalia-shell = {
     enable = true;
   };
- }
+}
