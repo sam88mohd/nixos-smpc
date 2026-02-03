@@ -22,6 +22,7 @@
   home.packages = with pkgs; [
     inputs.zen-browser.packages.${system}.default
     clinfo
+    vulkan-tools
     alacritty
     nwg-look
     adw-gtk3
