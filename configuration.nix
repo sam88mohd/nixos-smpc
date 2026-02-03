@@ -178,7 +178,7 @@
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    config = "*";
+    config.common.default = "*";
   };
 
   programs.dconf.enable = true;
