@@ -18,6 +18,12 @@
     "flakes"
   ];
 
+  # enable GPU hardware acceleration
+  hardware.graphics.extraPackages = [
+    intel-compute-runtime-legacy1
+    intel-media-driver
+  ];
+
   home-manager = {
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
