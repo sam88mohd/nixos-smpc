@@ -36,7 +36,7 @@
     mpv
     btop
     zathura
-    nemo
+    nemo-with-extensions
     felix-fm
     libreoffice-fresh
     tldr
