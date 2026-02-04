@@ -37,7 +37,6 @@
     btop
     zathura
     thunar
-    felix-fm
     libreoffice-fresh
     tldr
   ];
