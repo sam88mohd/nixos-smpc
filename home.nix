@@ -36,7 +36,8 @@
     mpv
     btop
     zathura
-    nemo-with-extensions
+    nemo
+    xfce.thunar
     felix-fm
     libreoffice-fresh
     tldr
