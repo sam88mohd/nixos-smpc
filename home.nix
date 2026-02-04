@@ -36,7 +36,7 @@
     mpv
     btop
     zathura
-    nautilus
+    nemo
     libreoffice-fresh
     tldr
   ];

@@ -167,7 +167,6 @@
   environment.systemPackages = with pkgs; [
     gnumake
     brightnessctl
-    vscode-fhs
   ];
 
   environment.pathsToLink = [
