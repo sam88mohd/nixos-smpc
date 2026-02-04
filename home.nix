@@ -36,7 +36,6 @@
     mpv
     btop
     zathura
-    nemo
     xfce.thunar
     felix-fm
     libreoffice-fresh
@@ -49,7 +48,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "helix";
   };
 
   programs.git = {
@@ -63,6 +62,7 @@
 
   programs.helix = {
     enable = true;
+    defaultEditor = true;
     settings = {
       theme = "noctalia";
       editor.cursor-shape = {
