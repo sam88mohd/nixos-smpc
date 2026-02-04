@@ -36,7 +36,7 @@
     mpv
     btop
     zathura
-    xfce.thunar
+    thunar
     felix-fm
     libreoffice-fresh
     tldr
@@ -45,10 +45,6 @@
   home.file = {
     ".config/niri/config.kdl".source =
       config.lib.file.mkOutOfStoreSymlink /home/sm/.config/home-manager/niri/default-config.kdl;
-  };
-
-  home.sessionVariables = {
-    EDITOR = "helix";
   };
 
   programs.git = {
@@ -75,7 +71,7 @@
       {
         name = "nix";
         auto-format = true;
-        formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
+        formatter.command = lib.getExe pkgs.nixfmt;
       }
     ];
   };
