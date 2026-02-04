@@ -37,6 +37,7 @@
     btop
     zathura
     nemo
+    felix-fm
     libreoffice-fresh
     tldr
   ];

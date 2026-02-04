@@ -641,7 +641,7 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 
 		// open application
-		Mod+e { spawn "nautilus"; }
+		Mod+e { spawn "nemo"; }
 
 		// noctalia binds
 		Mod+space hotkey-overlay-title="Toggle noctalia launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
