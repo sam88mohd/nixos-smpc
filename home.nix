@@ -24,6 +24,8 @@
     alacritty
     nwg-look
     adw-gtk3
+    glib
+    cava
     bibata-cursors
     gnome-themes-extra
     adwaita-icon-theme
@@ -90,11 +92,11 @@
     package = pkgs.niri-unstable;
   };
 
-  # enable noctalia systemd service
-  programs.noctalia-shell.systemd.enable = true;
-
   # configure noctalia shell
   programs.noctalia-shell = {
     enable = true;
+    systemd = {
+      enable = true;
+    };
   };
 }
