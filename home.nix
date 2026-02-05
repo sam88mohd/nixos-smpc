@@ -7,11 +7,6 @@
 }:
 
 {
-  imports = [
-    inputs.niri.homeModules.niri
-    inputs.noctalia.homeModules.default
-  ];
-
   home.username = "sm";
   home.homeDirectory = lib.mkDefault "/home/sm";
 
@@ -21,31 +16,10 @@
     inputs.zen-browser.packages.${system}.default
     clinfo
     vulkan-tools
-    alacritty
-    nwg-look
-    adw-gtk3
-    glib
-    cava
-    bibata-cursors
-    gnome-themes-extra
-    adwaita-icon-theme
-    papirus-icon-theme
-    qogir-icon-theme
     python3
-    loupe
-    steam
-    mpv
-    btop
-    zathura
-    thunar
     libreoffice-fresh
     tldr
   ];
-
-  home.file = {
-    ".config/niri/config.kdl".source =
-      config.lib.file.mkOutOfStoreSymlink /home/sm/.config/home-manager/niri/default-config.kdl;
-  };
 
   programs.git = {
     enable = true;
@@ -85,18 +59,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # niri config
-  programs.niri = {
-    enable = true;
-    package = pkgs.niri-unstable;
-  };
-
-  # configure noctalia shell
-  programs.noctalia-shell = {
-    enable = true;
-    systemd = {
-      enable = true;
-    };
-  };
 }
