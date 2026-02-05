@@ -18,6 +18,8 @@
     "flakes"
   ];
 
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
   # enable GPU hardware acceleration
   hardware.graphics = {
     extraPackages = with pkgs; [
@@ -29,6 +31,7 @@
 
   home-manager = {
     useUserPackages = true;
+    useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
     users = {
       sm = import ./home.nix;

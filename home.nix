@@ -12,8 +12,6 @@
     inputs.noctalia.homeModules.default
   ];
 
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-
   home.username = "sm";
   home.homeDirectory = lib.mkDefault "/home/sm";
 
