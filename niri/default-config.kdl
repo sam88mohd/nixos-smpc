@@ -106,7 +106,7 @@ output "eDP-1" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 6 
+    gaps 10 
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -641,7 +641,7 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 
 		// open application
-		Mod+e { spawn "nemo"; }
+		Mod+e { spawn "thunar"; }
 
 		// noctalia binds
 		Mod+space hotkey-overlay-title="Toggle noctalia launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }

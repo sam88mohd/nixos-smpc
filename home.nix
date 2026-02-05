@@ -33,6 +33,7 @@
     qogir-icon-theme
     python3
     loupe
+    steam
     mpv
     btop
     zathura
