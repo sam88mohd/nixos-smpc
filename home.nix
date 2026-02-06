@@ -9,7 +9,7 @@
 {
   imports = [
     inputs.niri.homeModules.niri
-    inputs.noctalia.homeModules.default
+    inputs.dms-plugin-registry.modules.default
   ];
 
   home.username = "sm";
@@ -18,14 +18,13 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    inputs.zen-browser.packages.${system}.default
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     clinfo
     vulkan-tools
     alacritty
     nwg-look
     adw-gtk3
     glib
-    cava
     bibata-cursors
     gnome-themes-extra
     adwaita-icon-theme
@@ -43,8 +42,6 @@
   ];
 
   home.file = {
-    ".config/niri/config.kdl".source =
-      config.lib.file.mkOutOfStoreSymlink /home/sm/.config/home-manager/niri/default-config.kdl;
   };
 
   programs.git = {
@@ -92,11 +89,22 @@
     package = pkgs.niri-unstable;
   };
 
-  # configure noctalia shell
-  programs.noctalia-shell = {
+  # enable DMS
+  programs.dms-shell = {
+
     enable = true;
+    package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
     systemd = {
-      enable = true;
+      enable = true; # Systemd service for auto-start
+      restartIfChanged = true; # Auto-restart dms.service when dms-shell changes
     };
+
+    # Core features
+    enableSystemMonitoring = true; # System monitoring widgets (dgop)
+    enableClipboard = true; # Clipboard history manager
+    enableDynamicTheming = true; # Wallpaper-based theming (matugen)
+    enableAudioWavelength = true; # Audio visualizer (cava)
+    enableCalendarEvents = true; # Calendar integration (khal)
   };
 }

@@ -10,7 +10,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
-    inputs.sysc-greet.nixosModules.default
   ];
 
   nix.settings.experimental-features = [
@@ -112,18 +111,6 @@
     variant = "";
   };
 
-  # sysc-greet configuration
-  services.sysc-greet = {
-    enable = true;
-    compositor = "niri"; # or "hyprland" or "sway"
-  };
-
-  # Optional: Set initial session for auto-login
-  # services.sysc-greet.settings.initial_session = {
-  #   command = "niri-session";
-  #   user = "sm";
-  # };
-
   # If using greetd:
   security.pam.services.greetd.enableGnomeKeyring = true;
 
@@ -144,6 +131,12 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
+  };
+
+  services.displayManager.dms-greeter = {
+    enable = true;
+    compositor.name = "niri";
+    package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
