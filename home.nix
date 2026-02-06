@@ -93,12 +93,7 @@
 
   # enable DMS
   programs.dank-material-shell = {
-
     enable = true;
-
-    niri = {
-      enableKeybinds = true; # Sets static preset keybinds
-    };
 
     package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
@@ -107,11 +102,8 @@
       restartIfChanged = true; # Auto-restart dms.service when dms-shell changes
     };
 
-    # Core features
-    enableSystemMonitoring = true; # System monitoring widgets (dgop)
-    enableClipboard = true; # Clipboard history manager
-    enableDynamicTheming = true; # Wallpaper-based theming (matugen)
-    enableAudioWavelength = true; # Audio visualizer (cava)
-    enableCalendarEvents = true; # Calendar integration (khal)
+    niri = {
+      enableKeybinds = true; # Sets static preset keybinds
+    };
   };
 }
