@@ -1,20 +1,43 @@
 {
   "nodes": {
-    "flake-utils": {
+    "dms": {
       "inputs": {
-        "systems": "systems"
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "lastModified": 1770384017,
+        "narHash": "sha256-LEGcIKyR9m8Q7z1gHDByR3d6fxGiaeWCl2s60kDPusQ=",
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "rev": "c5a21f8da0eaf26e7d9c84553e5aee79b7b1c2e4",
         "type": "github"
       },
       "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "type": "github"
+      }
+    },
+    "dms-plugin-registry": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1770317115,
+        "narHash": "sha256-YI7AsKrRO6bLte4eQZmU25EwATKTCQOwWJ2XzHinwCA=",
+        "owner": "AvengeMedia",
+        "repo": "dms-plugin-registry",
+        "rev": "2691797d99e2978a720246381995358465b0df83",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "dms-plugin-registry",
         "type": "github"
       }
     },
@@ -128,70 +151,36 @@
         "type": "github"
       }
     },
-    "noctalia": {
+    "quickshell": {
       "inputs": {
         "nixpkgs": [
+          "dms",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1769867365,
-        "narHash": "sha256-w4cjGJCEegtHcFNH6emjbQUDEW0wjURRbZtzWeHkT5I=",
-        "owner": "noctalia-dev",
-        "repo": "noctalia-shell",
-        "rev": "042fdb51e061130afc9f50c9236b3a8a20a80597",
-        "type": "github"
+        "lastModified": 1766725085,
+        "narHash": "sha256-O2aMFdDUYJazFrlwL7aSIHbUSEm3ADVZjmf41uBJfHs=",
+        "ref": "refs/heads/master",
+        "rev": "41828c4180fb921df7992a5405f5ff05d2ac2fff",
+        "revCount": 715,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
       },
       "original": {
-        "owner": "noctalia-dev",
-        "repo": "noctalia-shell",
-        "type": "github"
+        "rev": "41828c4180fb921df7992a5405f5ff05d2ac2fff",
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
       }
     },
     "root": {
       "inputs": {
+        "dms": "dms",
+        "dms-plugin-registry": "dms-plugin-registry",
         "home-manager": "home-manager",
         "niri": "niri",
         "nixpkgs": "nixpkgs",
-        "noctalia": "noctalia",
-        "sysc-greet": "sysc-greet",
         "zen-browser": "zen-browser"
-      }
-    },
-    "sysc-greet": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1769534350,
-        "narHash": "sha256-d8sMZdSHOsFgaOhVmK2w0Rm+edMgGP6Mq9k19WNkfa0=",
-        "owner": "Nomadcxx",
-        "repo": "sysc-greet",
-        "rev": "64cbe4e99c2817cf0941b1db98a49935183da1cf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Nomadcxx",
-        "repo": "sysc-greet",
-        "type": "github"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
       }
     },
     "xwayland-satellite-stable": {

@@ -9,6 +9,8 @@
 {
   imports = [
     inputs.niri.homeModules.niri
+    inputs.dms.homeModules.niri
+    inputs.dms.homeModules.dank-material-shell
     inputs.dms-plugin-registry.modules.default
   ];
 
@@ -90,9 +92,14 @@
   };
 
   # enable DMS
-  programs.dms-shell = {
+  programs.dank-material-shell = {
 
     enable = true;
+
+    niri = {
+      enableKeybinds = true; # Sets static preset keybinds
+    };
+
     package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
     systemd = {
