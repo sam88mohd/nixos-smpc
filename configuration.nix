@@ -38,6 +38,7 @@
   # auto upgrade
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
+  system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
