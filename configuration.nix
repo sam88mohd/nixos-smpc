@@ -133,10 +133,17 @@
     #media-session.enable = true;
   };
 
+  # enable niri
+  programs.niri.enable = true;
+
+  # enable dms-shell
+  programs.dms-shell.enable = true;
+
+  # enable dms-greeter
   services.displayManager.dms-greeter = {
     enable = true;
     compositor.name = "niri";
-    package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    configHome = "/home/sm";
   };
 
   # Enable touchpad support (enabled default in most desktopManager).

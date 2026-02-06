@@ -7,13 +7,6 @@
 }:
 
 {
-  imports = [
-    inputs.niri.homeModules.niri
-    inputs.dms.homeModules.niri
-    inputs.dms.homeModules.dank-material-shell
-    inputs.dms-plugin-registry.modules.default
-  ];
-
   home.username = "sm";
   home.homeDirectory = lib.mkDefault "/home/sm";
 
@@ -34,7 +27,6 @@
     qogir-icon-theme
     python3
     loupe
-    steam
     mpv
     btop
     zathura
@@ -84,26 +76,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # niri config
-  programs.niri = {
-    enable = true;
-    package = pkgs.niri-unstable;
-  };
-
-  # enable DMS
-  programs.dank-material-shell = {
-    enable = true;
-
-    package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
-
-    systemd = {
-      enable = true; # Systemd service for auto-start
-      restartIfChanged = true; # Auto-restart dms.service when dms-shell changes
-    };
-
-    niri = {
-      enableKeybinds = true; # Sets static preset keybinds
-    };
-  };
 }
