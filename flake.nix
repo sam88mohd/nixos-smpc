@@ -40,6 +40,7 @@
           specialArgs = { inherit inputs system; };
           modules = [
             ./hosts/default/configuration.nix
+            ./modules/services
             inputs.home-manager.nixosModules.home-manager
             inputs.sysc-greet.nixosModules.default
           ];
