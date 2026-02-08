@@ -38,7 +38,6 @@
     mpv
     btop
     zathura
-    thunar
     libreoffice-fresh
     tldr
   ];
@@ -59,10 +58,13 @@
   };
 
   # thunar config
-  programs.thunar.plugins = with pkgs; [
-    thunar-archive-plugin
-    thunar-volman
-  ];
+  programs.thunar = {
+    enable = true;
+    # plugins = with pkgs; [
+    #   thunar-archive-plugin
+    #   thunar-volman
+    # ];
+  };
 
   # helix config
   programs.helix = {
@@ -93,9 +95,6 @@
     };
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   # niri config
   programs.niri = {
     enable = true;
@@ -110,9 +109,28 @@
     };
   };
 
+  # alacritty config
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      window = {
+        # Set padding in pixels (x: horizontal, y: vertical)
+        padding = {
+          x = 5;
+          y = 5;
+        };
+        # Optional: Makes padding dynamic (keeps it uniform)
+        dynamic_padding = true;
+      };
+    };
+  };
+
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     config.common.default = "*";
   };
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 }
