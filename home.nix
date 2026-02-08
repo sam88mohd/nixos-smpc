@@ -33,7 +33,6 @@
     qogir-icon-theme
     python3
     loupe
-    steam
     mpv
     btop
     zathura
@@ -47,6 +46,7 @@
       config.lib.file.mkOutOfStoreSymlink /home/sm/.config/home-manager/niri/default-config.kdl;
   };
 
+  # git config
   programs.git = {
     enable = true;
     extraConfig = {
@@ -56,6 +56,7 @@
     };
   };
 
+  # helix config
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -76,6 +77,7 @@
     ];
   };
 
+  # vim config
   programs.vim = {
     enable = true;
     settings = {
@@ -92,7 +94,7 @@
     package = pkgs.niri-unstable;
   };
 
-  # configure noctalia shell
+  # noctalia shell config
   programs.noctalia-shell = {
     enable = true;
     systemd = {
