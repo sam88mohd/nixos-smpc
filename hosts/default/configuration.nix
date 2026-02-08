@@ -10,8 +10,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/main-user.nix
-    # inputs.home-manager.nixosModules.home-manager
-    # inputs.sysc-greet.nixosModules.default
   ];
 
   nix.settings.experimental-features = [
@@ -133,21 +131,14 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
+  pipewire.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     gnumake
     tree
+    dconf
     brightnessctl
   ];
 
