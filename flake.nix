@@ -39,7 +39,9 @@
         smpc = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs system; };
           modules = [
-            ./configuration.nix
+            ./hosts/default/configuration.nix
+            inputs.home-manager.nixosModules.home-manager
+            inputs.sysc-greet.nixosModules.default
           ];
         };
       };

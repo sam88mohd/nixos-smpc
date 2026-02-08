@@ -43,7 +43,7 @@
 
   home.file = {
     ".config/niri/config.kdl".source =
-      config.lib.file.mkOutOfStoreSymlink /home/sm/.config/home-manager/niri/default-config.kdl;
+      config.lib.file.mkOutOfStoreSymlink ../../modules/nixos/niri/default-config.kdl;
   };
 
   # git config
@@ -101,4 +101,12 @@
       enable = true;
     };
   };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = "*";
+  };
+
+  programs.dconf.enable = true;
 }
