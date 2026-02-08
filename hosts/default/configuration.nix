@@ -142,6 +142,18 @@
     brightnessctl
   ];
 
+  # thunar config
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
+  };
+
+  # Enable xfconf to save preferences
+  programs.xfconf.enable = true;
+
   environment.pathsToLink = [
     "/share/applications"
     "/share/xdg-desktop-portal"
