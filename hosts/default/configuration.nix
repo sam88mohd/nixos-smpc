@@ -142,6 +142,8 @@
     brightnessctl
   ];
 
+  services.tumbler.enable = true; # For thumbnails
+
   # thunar config
   programs.thunar = {
     enable = true;
