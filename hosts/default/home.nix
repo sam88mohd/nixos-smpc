@@ -58,6 +58,12 @@
     };
   };
 
+  # thunar config
+  programs.thunar.plugins = with pkgs; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
+
   # helix config
   programs.helix = {
     enable = true;
