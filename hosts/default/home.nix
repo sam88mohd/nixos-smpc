@@ -31,6 +31,8 @@
     adwaita-icon-theme
     papirus-icon-theme
     qogir-icon-theme
+    unzip
+    zip
     python3
     loupe
     mpv
