@@ -40,6 +40,8 @@
     zathura
     libreoffice-fresh
     tldr
+    xwayland-satellite
+    alacritty
   ];
 
   home.file = {
@@ -97,22 +99,6 @@
     enable = true;
     systemd = {
       enable = true;
-    };
-  };
-
-  # alacritty config
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      window = {
-        # Set padding in pixels (x: horizontal, y: vertical)
-        padding = {
-          x = 5;
-          y = 5;
-        };
-        # Optional: Makes padding dynamic (keeps it uniform)
-        dynamic_padding = true;
-      };
     };
   };
 

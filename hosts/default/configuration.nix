@@ -47,6 +47,8 @@
     };
   };
 
+  home-manager.backupFileExtension = "backup";
+
   # auto upgrade
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
