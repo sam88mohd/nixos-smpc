@@ -21,7 +21,6 @@
     inputs.zen-browser.packages.${system}.default
     clinfo
     vulkan-tools
-    alacritty
     nwg-look
     adw-gtk3
     glib
@@ -46,7 +45,7 @@
 
   home.file = {
     ".config/niri/config.kdl".source =
-      config.lib.file.mkOutOfStoreSymlink ../../modules/nixos/niri/default-config.kdl;
+      config.lib.file.mkOutOfStoreSymlink /home/sm/nixos-smpc/modules/nixos/niri/default-config.kdl;
   };
 
   # git config
