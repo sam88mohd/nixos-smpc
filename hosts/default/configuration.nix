@@ -141,7 +141,7 @@
     tree
     dconf
     brightnessctl
-    xwayland-satellite
+    xwayland-satellite-unstable
   ];
 
   services.tumbler.enable = true; # For thumbnails

@@ -41,6 +41,7 @@
     tldr
     alacritty
     steam
+    gnome-text-editor
   ];
 
   home.file = {
