@@ -102,6 +102,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # enable noctalia calendar support
+  services.gnome.evolution-data-server.enable = true;
+
   # Enable power-profile
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;

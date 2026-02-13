@@ -18,7 +18,10 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    inputs.zen-browser.packages.${system}.default
+    (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+      calendarSupport = true;
+    })
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     clinfo
     vulkan-tools
     nwg-look
@@ -42,6 +45,7 @@
     alacritty
     steam
     gnome-text-editor
+    khal
   ];
 
   home.file = {
@@ -52,7 +56,7 @@
   # git config
   programs.git = {
     enable = true;
-    extraConfig = {
+    settings = {
       user.name = "samsudinMohamad";
       user.email = "sam88mohd@gmail.com";
       init.defaultBranch = "main";
@@ -92,14 +96,6 @@
   programs.niri = {
     enable = true;
     package = pkgs.niri-unstable;
-  };
-
-  # noctalia shell config
-  programs.noctalia-shell = {
-    enable = true;
-    systemd = {
-      enable = true;
-    };
   };
 
   # Let Home Manager install and manage itself.
