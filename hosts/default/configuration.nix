@@ -30,13 +30,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # enable GPU hardware acceleration
-  # hardware.graphics = {
-  #   extraPackages = with pkgs; [
-  #     intel-compute-runtime-legacy1
-  #     intel-media-driver
-  #     libva
-  #   ];
-  # };
+  hardware.graphics.enable = true;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
@@ -147,6 +141,7 @@
     tree
     dconf
     brightnessctl
+    xwayland-satellite
   ];
 
   services.tumbler.enable = true; # For thumbnails
