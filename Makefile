@@ -7,3 +7,8 @@ run:
 
 clean:
 	sudo nix-collect-garbage -d
+
+.PHONY: update
+
+update:
+	sudo nix flake update

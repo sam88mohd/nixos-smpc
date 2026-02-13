@@ -30,7 +30,13 @@
   nixpkgs.config.allowUnfree = true;
 
   # enable GPU hardware acceleration
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-vaapi-driver
+      intel-media-driver
+    ];
+  };
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
