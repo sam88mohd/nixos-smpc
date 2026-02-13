@@ -39,8 +39,8 @@
     zathura
     libreoffice-fresh
     tldr
-    xwayland-satellite
     alacritty
+    steam
   ];
 
   home.file = {
