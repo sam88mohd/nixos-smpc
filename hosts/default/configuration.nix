@@ -130,12 +130,6 @@
     compositor = "niri"; # or "hyprland" or "sway"
   };
 
-  # Optional: Set initial session for auto-login
-  # services.sysc-greet.settings.initial_session = {
-  #   command = "niri-session";
-  #   user = "sm";
-  # };
-
   # If using greetd:
   security.pam.services.greetd.enableGnomeKeyring = true;
 
@@ -152,6 +146,8 @@
     dconf
     brightnessctl
     xwayland-satellite-unstable
+    kdePackages.print-manager
+    system-config-printer
   ];
 
   services.tumbler.enable = true; # For thumbnails
