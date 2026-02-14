@@ -33,6 +33,8 @@
     adwaita-icon-theme
     papirus-icon-theme
     qogir-icon-theme
+    file-roller
+    zip
     unzip
     zip
     python3
@@ -46,6 +48,7 @@
     steam
     gnome-text-editor
     khal
+    pcsx2
   ];
 
   home.file = {
