@@ -149,6 +149,7 @@
     kdePackages.print-manager
     system-config-printer
     ffmpegthumbnailer
+    pavucontrol
   ];
 
   services.tumbler.enable = true; # For thumbnails
