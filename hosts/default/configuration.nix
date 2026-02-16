@@ -148,6 +148,7 @@
     xwayland-satellite-unstable
     kdePackages.print-manager
     system-config-printer
+    ffmpegthumbnailer
   ];
 
   services.tumbler.enable = true; # For thumbnails
