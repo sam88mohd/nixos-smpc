@@ -50,6 +50,7 @@
     gnome-text-editor
     khal
     pcsx2
+    rpcs3
   ];
 
   home.file = {

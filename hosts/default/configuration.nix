@@ -152,6 +152,7 @@
     lxqt.pavucontrol-qt
     qt6Packages.qt6ct
     adwaita-qt6
+    p7zip
   ];
 
   services.tumbler.enable = true; # For thumbnails
