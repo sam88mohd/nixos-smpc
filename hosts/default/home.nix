@@ -37,6 +37,7 @@
     zip
     unzip
     zip
+    fastfetch
     python3
     loupe
     mpv
