@@ -151,6 +151,7 @@
     ffmpegthumbnailer
     lxqt.pavucontrol-qt
     qt6Packages.qt6ct
+    adwaita-qt6
   ];
 
   services.tumbler.enable = true; # For thumbnails
