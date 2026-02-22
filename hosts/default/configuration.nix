@@ -34,8 +34,10 @@
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
-      intel-vaapi-driver
       intel-media-driver
+      libva-vdpau-driver
+      libvdpau-va-gl
+      vpl-gpu-rt
     ];
   };
 
