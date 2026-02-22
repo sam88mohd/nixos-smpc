@@ -22,21 +22,12 @@
       calendarSupport = true;
     })
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    clinfo
-    vulkan-tools
-    nwg-look
     adw-gtk3
-    glib
-    cava
     bibata-cursors
     gnome-themes-extra
     adwaita-icon-theme
     papirus-icon-theme
     qogir-icon-theme
-    file-roller
-    zip
-    unzip
-    zip
     fastfetch
     python3
     loupe

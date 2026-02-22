@@ -149,10 +149,15 @@
     kdePackages.print-manager
     system-config-printer
     ffmpegthumbnailer
-    lxqt.pavucontrol-qt
-    qt6Packages.qt6ct
+    pavucontrol
     adwaita-qt6
     p7zip
+    zip
+    unzip
+    file-roller
+    nwg-look
+    cava
+    glib
   ];
 
   services.tumbler.enable = true; # For thumbnails
