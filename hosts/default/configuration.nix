@@ -160,6 +160,10 @@
     nwg-look
     cava
     glib
+    vulkan-loader
+    vulkan-validation-layers
+    vulkan-tools
+    intel-media-driver
   ];
 
   services.tumbler.enable = true; # For thumbnails
